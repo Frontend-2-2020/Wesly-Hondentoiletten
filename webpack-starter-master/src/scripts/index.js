@@ -23,8 +23,6 @@ Axios.get('https://datatank.stad.gent/4/infrastructuur/hondenvoorzieningen.geojs
 
 function addMarkers(data){
     
-    data = JSON.parse(JSON.stringify(data));
-    console.log(data);
     data.forEach(element => {
        const marker =  L.marker([element[1],element[0]], {icon: myIcon}).addTo(mymap);
          marker.bindPopup("LAT:"+element[1]+", LON:"+element[0]);
